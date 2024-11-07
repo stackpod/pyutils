@@ -16,13 +16,13 @@ class Result():
         self.value = value
 
     def __str__(self):
-        return f'[{self.type}]${self.value}'
+        return self.toJson()
 
     def __repr__(self):
-        return f'Result.{self.type}(self.value)'
+        return f'Result.{self.type}({self.value})'
 
     def toJson(self):
-        return json.dumps({ [self.type]: self.value })
+        return json.dumps({ self.type: self.value })
 
     @classmethod
     def Ok(cls, value):
